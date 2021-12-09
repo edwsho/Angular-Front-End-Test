@@ -71,7 +71,9 @@ export class StudentsComponent implements OnInit {
 
   }
 
-  
+  /* Metodo que se encarga de llenar la tabla de Solicitudes llenandolas del LocalStorage.
+  *
+  */
 
   fillSolicitudes() {
 
@@ -81,6 +83,9 @@ export class StudentsComponent implements OnInit {
 
   }
 
+  /* Metodo encragado de activar y desactivar el panel de Agregar solicitud
+  *
+  */
   activateFormControl() {
 
     console.log("Pase por activateFormControl");
@@ -96,6 +101,12 @@ export class StudentsComponent implements OnInit {
 
   }
 
+
+  /* Metodo encargado de la previsualizacion de la imagen.
+  *
+  * @param e - Evento el cual recibe el metodo para la trasnformacion de esa archivo en un Blob y poder previsualizar
+  *
+  */
   onselectFile(e){
 
     if(e.target.files){
@@ -114,6 +125,12 @@ export class StudentsComponent implements OnInit {
 
   }
 
+
+  /* Metodo el cual se encarga de agregar al LocalStorage una nueva solicitud de ingreso 
+  * ademas de mostrar el contenido del LocalStorage en la tabla correspondiente.
+  *
+  *
+  */
   
   addStudent() {
     
@@ -182,6 +199,11 @@ export class StudentsComponent implements OnInit {
   }
 
 
+  /* Metodo encargado de la acivacion y funcionamiento del filtro de la tabla de estudiantes admitidos.
+  *
+  * @param event - Evento el cual contiene la informacion para realiar el filtrado
+  *
+  */
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSourceStudents.filter = filterValue.trim().toLowerCase();

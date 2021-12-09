@@ -36,6 +36,12 @@ export class MatTableComponent {
 
   }
 
+  /* Metodo el cual se encarga de la paginacion y filtrado de la tabla
+  *
+  * @param event - Evento con la informacion para que se pueda realizar el filtrado y la 
+  * paginacion de la tabla
+  *
+  */
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();

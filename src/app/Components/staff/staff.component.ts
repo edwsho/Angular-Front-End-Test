@@ -32,6 +32,13 @@ export class StaffComponent {
 
   }
 
+
+  /* Pipe que se encarga de mostrar realizar la validacion de la imagen proveniente del API
+  *
+  * @param event - Evento el cual contiene la informacion para realizar el filtrado y paginacion
+  * en la tabla respectiva
+  *
+  */
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSourceStaff.filter = filterValue.trim().toLowerCase();

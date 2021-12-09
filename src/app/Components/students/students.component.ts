@@ -171,7 +171,7 @@ export class StudentsComponent implements OnInit {
     }
 
     // Muestro el mensaje de OK
-    this.snackBar.open('Solicitud agregada correctamente!', 'Aceptar', { duration: 5000});
+    this.snackBar.open('Solicitud agregada correctamente!', 'Aceptar', { duration: 5000, panelClass:['green-snackbar']});
 
     //Oculto el FormGroup
     this.edited = false;

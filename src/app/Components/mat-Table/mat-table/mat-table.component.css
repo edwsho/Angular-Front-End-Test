@@ -52,3 +52,9 @@ table {
 
   }
 
+  ::ng-deep .green-snackbar{
+    background-color: #00cc00;
+    color: white;
+  }
+  
+

@@ -83,7 +83,7 @@ export class MatTableComponent {
       console.log(this.dataSource),
 
     // Muestro el mensaje de OK
-    this.snackBar.open('Lista de personajes de: ' + house +' cargadas!', 'Aceptar', { duration: 5000});
+    this.snackBar.open('Lista de personajes de: ' + house +' cargadas!', 'Aceptar', { duration: 5000, panelClass:['green-snackbar']});
      }
       );
 

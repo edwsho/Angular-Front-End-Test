@@ -59,7 +59,7 @@ export class StaffComponent {
       console.log(this.dataSourceStaff),
       
     // Muestro el mensaje de OK
-    this.snackBar.open('Lista de Profesores cargada correctamente!', 'Aceptar', { duration: 5000});
+    this.snackBar.open('Lista de Profesores cargada correctamente!', 'Aceptar', { duration: 5000, panelClass:['green-snackbar']});
      }
       );
 

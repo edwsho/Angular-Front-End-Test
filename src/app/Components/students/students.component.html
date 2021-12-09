@@ -1,0 +1,232 @@
+<!-- <mat-card>
+    <mat-card-header>
+      <mat-card-title>Sección de Aspirantes:</mat-card-title>
+      <mat-card-subtitle></mat-card-subtitle>
+    </mat-card-header>
+    <div></div>
+    <mat-card-content>
+    
+      <p>En cuentre información sobre los estudiantes de Hogwarts:</p>
+      
+    </mat-card-content>
+    </mat-card>
+-->
+
+    <div>
+        
+        <div class="example-button-container">
+          
+            <button (click)="activateFormControl()" mat-fab color="primary" aria-label="Example icon button with a delete icon">
+              <mat-icon>add</mat-icon>
+            </button>
+            
+            <div id="labelbuttonadd">
+               <label> <h4>Agregar solicitud</h4> </label>
+           </div>
+        </div>
+         
+    </div>
+
+
+    <div id="DivForm">
+
+        <form class="containerFormG" *ngIf="edited" [formGroup]="addForm">
+
+          <mat-card>
+            <mat-card-header>
+              <mat-card-title>Sección de Aspirantes:</mat-card-title>
+              <mat-card-subtitle></mat-card-subtitle>
+            </mat-card-header>
+          
+            <mat-card-content>
+          
+            </mat-card-content>
+            </mat-card>
+
+
+            <mat-form-field class="example-full-width">
+            <label for="name">Nombre:</label>
+            <input matInput type="text" text="" class="form-control" formControlName="name">
+            </mat-form-field>
+
+    
+              <mat-form-field appearance="fill">
+                <mat-label for="species">Especie:</mat-label>
+                <mat-select  
+                class="form-control" formControlName="species">
+                  <mat-option value="Human">Human</mat-option>
+                  <mat-option value="Orc">Orco</mat-option>
+                  <mat-option value="Domestic-Elf">Domestic Elf</mat-option>
+                  <mat-option value="Centaurus">Centaurus</mat-option>
+                </mat-select>
+              </mat-form-field>
+              
+              <mat-form-field appearance="fill">
+                <mat-label for="gender">Genero:</mat-label>
+                <mat-select  
+                class="form-control" formControlName="gender">
+                  <mat-option value="male">Male</mat-option> 
+                  <mat-option value="female">Female</mat-option>
+                </mat-select>
+              </mat-form-field>
+
+
+              <!--<mat-form-field class="example-full-width">
+                <label for="house">Casa:</label>
+                <input matInput type="text" class="form-control" formControlName="house">
+              </mat-form-field> -->
+
+              <mat-form-field appearance="fill">
+                <mat-label for="house">Casa:</mat-label>
+                <mat-select  
+                class="form-control" formControlName="house">
+                <mat-option value="slytherin">Slytherin</mat-option>
+                <mat-option value="gryffindor">Gryffindor</mat-option>
+                <mat-option value="Ravenclaw">Ravenclaw</mat-option>
+                <mat-option value="hufflepuff">Hufflepuff</mat-option>
+                </mat-select>
+              </mat-form-field>
+
+              <label id="labelDate" for="dateOfBirth">Date Of Birth:</label>
+            <input type="date" class="form-control" placeholder="dd-mm-yyyy" value=""
+            min="1890-01-01" max="2021-12-31" formControlName="dateOfBirth">
+            
+            <mat-form-field appearance="fill">
+              <mat-label for="ancestry">Ancestros:</mat-label>
+              <mat-select  
+              class="form-control" formControlName="ancestry">
+              <mat-option value="half-blood">Half-Blood</mat-option>
+              <mat-option value="pure-blood">Pure-Blood</mat-option>
+              </mat-select>
+            </mat-form-field>
+              
+            <mat-form-field class="example-full-width">
+              <label for="eyeColour">Color de ojos:</label>
+              <input matInput type="text" class="form-control" formControlName="eyeColour">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+              <label for="hairColour">Color de pelo:</label>
+              <input matInput type="text" class="form-control" formControlName="hairColour">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+              <label for="wand">Varita:</label>
+              <input matInput type="text" class="form-control" formControlName="wand">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+            <label for="patronus">Patronus:</label>
+            <input matInput type="text" class="form-control" formControlName="patronus">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+              <label for="actor">Actor:</label>
+              <input matInput type="text" class="form-control" formControlName="actor">
+              </mat-form-field>
+            
+              <div id="divButton">
+                
+                  <label for="image">Imagen:  </label>
+                  <img [src]="url" height="20px"><br>
+                  <input type="file" (change)="onselectFile($event)" class="form-control" formControlName="image">
+              </div>  
+            
+            <div id="divButton">
+            <button [attr.disabled]="addForm? true : null" mat-raised-button color="primary" (click)="addStudent()">Enviar</button>
+            </div>
+
+
+            <h4 id="h4Solicitudes">Lista de Solicitudes:</h4>
+            <table mat-table [dataSource]="dataSourceSolicitudes" matSort class="mat-elevation-z8">
+              <!--- Note that these columns can be defined in any order.
+                    The actual rendered columns are set as a property on the row definition" -->
+            
+              <!-- Position Column -->
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </th>
+                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+              </ng-container>
+            
+              <!-- Name Column -->
+              <ng-container matColumnDef="patronus">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Patronus </th>
+                <td mat-cell *matCellDef="let element"> {{element.patronus}} </td>
+              </ng-container>
+            
+              <!-- Name Column -->
+              <ng-container matColumnDef="dateOfBirth">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Edad </th>
+                <td mat-cell *matCellDef="let element"> {{element.dateOfBirth | age}} </td>
+              </ng-container>
+            
+              <!-- Name Column -->
+              <ng-container matColumnDef="image">
+                <th mat-header-cell *matHeaderCellDef> Imagen </th>
+                <td mat-cell *matCellDef="let element"> <img [src]="element.image" /> </td>
+              </ng-container>
+            
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+
+        </form>
+
+    </div>
+    
+    
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Sección de Estudiantes:</mat-card-title>
+        <mat-card-subtitle></mat-card-subtitle>
+      </mat-card-header>
+      <div></div>
+      <mat-card-content>
+      
+        <p>En cuentre información sobre los estudiantes de Hogwarts:</p>
+        
+      </mat-card-content>
+      </mat-card>
+
+
+    <mat-form-field>
+      <mat-label>Filtro de busqueda:</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Harry" #input>
+    </mat-form-field>
+    
+    <div>
+    <table mat-table [dataSource]="dataSourceStudents" matSort class="mat-elevation-z8">
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+      
+        <!-- Position Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </th>
+          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+      
+        <!-- Name Column -->
+        <ng-container matColumnDef="patronus">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Patronus </th>
+          <td mat-cell *matCellDef="let element"> {{element.patronus}} </td>
+        </ng-container>
+      
+        <!-- Name Column -->
+        <ng-container matColumnDef="dateOfBirth">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Edad </th>
+          <td mat-cell *matCellDef="let element"> {{element.dateOfBirth | age}} </td>
+        </ng-container>
+      
+        <!-- Name Column -->
+        <ng-container matColumnDef="image">
+          <th mat-header-cell *matHeaderCellDef> Imagen </th>
+          <td mat-cell *matCellDef="let element"> <img src="{{element.image | images}}" /> </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+    
+    </div>

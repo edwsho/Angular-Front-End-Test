@@ -1,0 +1,71 @@
+/*@import '~@angular/material/theming';
+
+
+@include mat-core();
+
+
+//Tema 1 Ligth
+// Creo la estructura de mi tema colocandole los tipos de elementos
+$hog-app-ligth-primary: mat-palette($mat-orange, 600);
+$hog-app-ligth-accent:  mat-palette($mat-blue, 800);
+$hog-app-ligth-warn:  mat-palette($mat-red, 500);
+
+//Defino la estructura del tema es un Tema en especifico o configuracion
+$hog-app-ligth-theme : mat-light-theme($hog-app-ligth-primary, $hog-app-ligth-accent, $hog-app-ligth-warn);
+//----------------------------------------------------------------------------------------------------------
+
+//Tema 2 Ligth
+// Creo la estructura de mi tema colocandole los tipos de elementos
+$hog-app-ligth-primary: mat-palette($mat-orange, 600);
+$hog-app-ligth-accent:  mat-palette($mat-blue, 800);
+$hog-app-ligth-warn:  mat-palette($mat-red, 500);
+
+//Defino la estructura del tema es un Tema en especifico o configuracion
+$hog-app-ligth-theme : mat-light-theme($hog-app-ligth-primary, $hog-app-ligth-accent, $hog-app-ligth-warn);
+//----------------------------------------------------------------------------------------------------------
+
+//Tema 1 Dark
+// Creo la estructura de mi tema colocandole los tipos de elementos
+$hog-app-dark-primary: mat-palette($mat-green, 600);
+$hog-app-dark-accent:  mat-palette($mat-purple, 800);
+$hog-app-dark-warn:  mat-palette($mat-red, 500);
+
+$hog-app-dark-theme : mat-light-theme($hog-app-dark-primary, $hog-app-dark-accent, $hog-app-dark-warn);
+//----------------------------------------------------------------------------------------------------------
+
+
+//Tema 2 Dark
+// Creo la estructura de mi tema colocandole los tipos de elementos
+$hog-app-ligth-primary: mat-palette($mat-orange, 600);
+$hog-app-ligth-accent:  mat-palette($mat-blue, 800);
+$hog-app-ligth-warn:  mat-palette($mat-red, 500);
+
+$hog-app-ligth-theme : mat-light-theme($hog-app-ligth-primary, $hog-app-ligth-accent, $hog-app-ligth-warn);
+
+//----------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+@include angular-material-theme($hog-app-ligth-theme);
+
+.ligth-theme {
+    @include angular-material-theme($hog-app-ligth-theme);
+    background:#fff;
+    color: #222;
+}
+
+.dark-theme {
+    @include angular-material-theme($hog-app-dark-theme);
+    background: #222;
+    color:#fff;
+}
+
+
+
+
+
+
+*/

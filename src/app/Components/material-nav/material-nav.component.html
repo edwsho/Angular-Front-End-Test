@@ -1,0 +1,50 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer
+      class="sidenav"
+      fixedInViewport = "false"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'over'"
+      [opened]="false">
+    <mat-nav-list>
+
+      <a (click)="drawer.toggle()" mat-list-item routerLink="/HomePage">
+        <mat-icon>home</mat-icon>
+        Home
+      </a>
+      
+      <a (click)="drawer.toggle()" mat-list-item routerLink="/Table">
+        <mat-icon>playlist_add_check</mat-icon>
+        Tabla de personajes
+      </a>
+
+      <a (click)="drawer.toggle()" mat-list-item href="/StudentsTable">
+        <mat-icon>note_alt</mat-icon>
+        Tabla de estudiantes 
+      </a>
+     
+      <a (click)="drawer.toggle()" mat-list-item href="/StaffTable">
+        <mat-icon>groups</mat-icon>
+        Tabla de profesores
+      </a>
+
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <button type="button"  class = "button-menu" mat-button (click)="drawer.toggle()"> Menu </button>
+      <span class="main-text">Hogwarts Wizard School</span>
+
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+   
+  </mat-sidenav-content>
+</mat-sidenav-container>
+

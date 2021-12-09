@@ -1,0 +1,69 @@
+section {
+    display: table;
+  }
+
+  .Home {
+    margin: 2%;
+  }
+  
+  .example-label {
+    display: table-cell;
+    font-size: 14px;
+    margin-left: 10%;
+    min-width: 100%;
+  }
+  
+  .example-button-row {
+    display: table-cell;
+    width: 15%;
+    height: 10%;
+    margin: 2%;
+  }
+  
+  .example-button-row .mat-button-base {
+    margin: 5% 5% 5% 5%;
+    
+  }
+
+/*------------------------------------------  */
+
+html, body{
+  
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+   
+}
+
+.full {
+
+  width: 100%;
+  height: 100%;
+  background: url('/assets/wp3.jpg') no-repeat 50% 50%;
+  background-size: cover;
+  margin: 0;
+
+}
+
+.full-iner {
+  width: 100%;
+  vertical-align: top;
+  display: table-cell;
+}
+
+.content {
+  max-width: 500px;
+  margin: auto;
+  margin-top: 5%;
+  text-align: center;
+}
+
+.content h1{
+  font-family: 'Century Gothic', sans-serif;
+  font-size: 200%;
+  color:rgba(255, 255, 255, 0.952);
+}
+
+
+
